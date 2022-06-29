@@ -1,0 +1,85 @@
+<html>
+
+<style>
+*{
+    text-align: center;
+}
+#header{
+    background-image: url('temp2.jpeg');
+    background-size: cover;
+    background-position: center;
+    height:100vh;
+}
+h{
+    color:red;
+    font-size: 50px;
+    line-height: normal;
+    display: flex ;
+    flex-direction: column;
+    position: absolute;
+    top:20%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    min-width: fit-content;
+    padding: 0 20px;
+}
+h0{
+    color:red;
+    font-size: 50px;
+    line-height: normal;
+    display: flex ;
+    flex-direction: column;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    min-width: fit-content;
+    padding: 0 20px;
+}
+h1{
+    font-size: 50px;
+    color: brown;
+    min-width: fit-content;
+}
+p{
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: green;
+}
+</style>
+<header id="header">
+<h>
+<h1>TEMPERATURE CONVERTOR</h1>
+</h>
+<h0>
+<p>Celsius</p>
+<input type="number" id="celsius" oninput="celsiusConversion(this.value)" placeholder="Celsius" />
+<p>Fahrenheit</p>
+<input type="number" id="fahrenheit" oninput="fahrenheitConversion(this.value)" placeholder="Fahrenheit" />
+
+<p>Kelvin</p>
+<input type="number" id="kelvin" oninput="kelvinConversion(this.value)" placeholder="Kelvin" />
+</h0>
+</header>
+
+<script>
+function fahrenheitConversion(temperature){
+  temperature = parseFloat(temperature);
+  document.getElementById("celsius").value=(temperature-32)/1.8;
+  document.getElementById("kelvin").value=((temperature-32)/1.8)+273.15;
+}
+
+function celsiusConversion(temperature){
+  temperature = parseFloat(temperature);
+  document.getElementById("fahrenheit").value=(temperature*1.8)+32;
+  document.getElementById("kelvin").value=temperature+273.15;
+}
+
+function kelvinConversion(temperature){
+  temperature = parseFloat(temperature);
+  document.getElementById("fahrenheit").value=((temperature-273.15)*1.8)+32;
+  document.getElementById("celsius").value=temperature-273.15;
+}
+</script>
+
+</html
